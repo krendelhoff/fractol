@@ -1,0 +1,83 @@
+name:                fractol
+version:             0.1.0.0
+github:              "krendelhoff/fractol"
+license:             BSD3
+author:              "Savely Krendelhoff"
+maintainer:          "krendelhoff1@yandex.ru"
+copyright:           "2021 Savely Krendelhoff"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+description: Fractol
+
+dependencies:
+- base
+- relude
+- extra
+- matrix
+- lens
+- aeson
+- lens-aeson
+- gloss
+- gloss-raster
+- gloss-algorithms
+- repa
+- containers
+- mtl
+- text
+- vector
+- bytestring
+
+default-extensions:
+- OverloadedStrings
+- NoImplicitPrelude
+- TypeApplications
+- RecordWildCards
+- TemplateHaskell
+- ScopedTypeVariables
+- BlockArguments
+- NamedFieldPuns
+- LambdaCase
+
+library:
+  source-dirs: src
+
+executables:
+  fractol-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -eventlog
+    - -O2
+    - -fmax-simplifier-iterations=20
+    - -fsimplifier-phases=3
+    - -fno-liberate-case
+    - -funfolding-use-threshold1000
+    - -funfolding-keeness-factor1000
+    - -fllvm
+    - -optlo-O3
+    dependencies:
+    - fractol
+
+tests:
+  fractol-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -eventlog
+    - -O2
+    - -fmax-simplifier-iterations=20
+    - -fsimplifier-phases=3
+    - -fno-liberate-case
+    - -funfolding-use-threshold1000
+    - -funfolding-keeness-factor1000
+    - -fllvm
+    - -optlo-O3
+    dependencies:
+    - fractol

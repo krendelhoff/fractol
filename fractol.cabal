@@ -1,0 +1,133 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           fractol
+version:        0.1.0.0
+description:    Fractol
+homepage:       https://github.com/krendelhoff/fractol#readme
+bug-reports:    https://github.com/krendelhoff/fractol/issues
+author:         Savely Krendelhoff
+maintainer:     krendelhoff1@yandex.ru
+copyright:      2021 Savely Krendelhoff
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/krendelhoff/fractol
+
+library
+  other-modules:
+      Paths_fractol
+  hs-source-dirs:
+      src
+  default-extensions:
+      OverloadedStrings
+      NoImplicitPrelude
+      TypeApplications
+      RecordWildCards
+      TemplateHaskell
+      ScopedTypeVariables
+      BlockArguments
+      NamedFieldPuns
+      LambdaCase
+  build-depends:
+      aeson
+    , base
+    , bytestring
+    , containers
+    , extra
+    , gloss
+    , gloss-algorithms
+    , gloss-raster
+    , lens
+    , lens-aeson
+    , matrix
+    , mtl
+    , relude
+    , repa
+    , text
+    , vector
+  default-language: Haskell2010
+
+executable fractol-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_fractol
+  hs-source-dirs:
+      app
+  default-extensions:
+      OverloadedStrings
+      NoImplicitPrelude
+      TypeApplications
+      RecordWildCards
+      TemplateHaskell
+      ScopedTypeVariables
+      BlockArguments
+      NamedFieldPuns
+      LambdaCase
+  ghc-options: -threaded -rtsopts -eventlog -O2 -fmax-simplifier-iterations=20 -fsimplifier-phases=3 -fno-liberate-case -funfolding-use-threshold1000 -funfolding-keeness-factor1000 -fllvm -optlo-O3
+  build-depends:
+      aeson
+    , base
+    , bytestring
+    , containers
+    , extra
+    , fractol
+    , gloss
+    , gloss-algorithms
+    , gloss-raster
+    , lens
+    , lens-aeson
+    , matrix
+    , mtl
+    , relude
+    , repa
+    , text
+    , vector
+  default-language: Haskell2010
+
+test-suite fractol-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_fractol
+  hs-source-dirs:
+      test
+  default-extensions:
+      OverloadedStrings
+      NoImplicitPrelude
+      TypeApplications
+      RecordWildCards
+      TemplateHaskell
+      ScopedTypeVariables
+      BlockArguments
+      NamedFieldPuns
+      LambdaCase
+  ghc-options: -threaded -rtsopts -eventlog -O2 -fmax-simplifier-iterations=20 -fsimplifier-phases=3 -fno-liberate-case -funfolding-use-threshold1000 -funfolding-keeness-factor1000 -fllvm -optlo-O3
+  build-depends:
+      aeson
+    , base
+    , bytestring
+    , containers
+    , extra
+    , fractol
+    , gloss
+    , gloss-algorithms
+    , gloss-raster
+    , lens
+    , lens-aeson
+    , matrix
+    , mtl
+    , relude
+    , repa
+    , text
+    , vector
+  default-language: Haskell2010
